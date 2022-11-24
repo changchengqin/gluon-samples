@@ -7,7 +7,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
 
       - name: Setup Gluon's GraalVM
         uses: gluonhq/setup-graalvm@master
@@ -24,13 +24,6 @@ jobs:
       - name: Make staging directory
         run: mkdir staging
         
-        
-
-      - name: Gluon License
-        uses: gluonhq/gluon-build-license@v1
-        with:
-          gluon-license: ${{ secrets.GLUON_LICENSE }}
-
       - name: Gluon Build
         run: mvn -Pdesktop gluonfx:build gluonfx:package
 
