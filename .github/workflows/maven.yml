@@ -16,7 +16,7 @@ jobs:
         run: cd HelloWeb
         
       - name: current dir display 
-        run: pwd
+        run: ls
         
       - name: maven version display
         run: mvn --version
