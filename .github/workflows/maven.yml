@@ -16,7 +16,7 @@ jobs:
         run: mkdir staging
         
       - name: set GRAALVM_HOME env variable
-        run: export GRAALVM_HOME=$GRAALVM_11_ROOT
+        run: export GRAALVM_HOME=$GRAALVM_11_ROOT;echo $GRAALVM_HOME 
         
       - name: build
         run: mvn -f HelloWeb/pom.xml gluonfx:build gluonfx:package -Pweb
