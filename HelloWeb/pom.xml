@@ -52,6 +52,7 @@
                 <configuration>
                     <target>${client.target}</target>
                     <mainClass>${main.class}</mainClass>
+                         <graalvmHome>/usr/local/graalvm/graalvm-ce-java11-22.3.0</graalvmHome>
                 </configuration>
             </plugin>
         </plugins>
