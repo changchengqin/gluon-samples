@@ -52,6 +52,7 @@
                 <configuration>
                     <target>${client.target}</target>
                     <mainClass>${main.class}</mainClass>
+                    <graalvmHome>$GRAALVM_11_ROOT</graalvmHome>
                 </configuration>
             </plugin>
         </plugins>
