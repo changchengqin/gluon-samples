@@ -13,7 +13,7 @@ jobs:
         run: pwd
         
       - name: change dir
-        run: cd HelloWeb
+        run: java --version;graalvm --version
         
       - name: current dir display 
         run: ls
