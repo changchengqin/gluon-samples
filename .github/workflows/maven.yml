@@ -9,14 +9,23 @@ jobs:
     steps:
       - uses: actions/checkout@master
       
-      - name: current dir display 
+      - name: set 
         run: pwd
         
-      - name: change dir
-        run: java --version
+      - name: Make staging directory
+        run: mkdir staging
         
-      - name: current dir display 
-        run: ls
+      - name: set GRAALVM_HOME env variable
+        run: export GRAALVM_HOME = $GRAALVM_11_ROOT
         
       - name: build
-        run: mvn -f HelloWeb/pom.xml gluonfx:build 
+        run: mvn -f HelloWeb/pom.xml gluonfx:build gluonfx:package -Pweb
+      
+      - name: Copy native image to staging
+        run: cp -r target/gluonfx/x86_64-linux/HelloGluon* staging
+
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: Package
+          path: staging
