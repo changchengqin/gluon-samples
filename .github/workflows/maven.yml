@@ -13,7 +13,7 @@ jobs:
         run: pwd
         
       - name: change dir
-        run: java --version;$GRAALVM_11_ROOT
+        run: java --version
         
       - name: current dir display 
         run: ls
