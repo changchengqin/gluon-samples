@@ -22,7 +22,7 @@ jobs:
         run: mvn -f HelloWeb/pom.xml gluonfx:build gluonfx:package -Pweb
       
       - name: Copy native image to staging
-        run: cp -r target/gluonfx/x86_64-web/* staging
+        run: cp -r HelloWeb/target/gluonfx/x86_64-web/* staging
 
       - name: Upload
         uses: actions/upload-artifact@v2
