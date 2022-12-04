@@ -40,7 +40,8 @@ jobs:
 
       # Copy the native binary to the staging directory
       - name: Copy native image to staging
-        run: cp -r HelloFx/target/gluonfx/x86_64-windows/HelloGluon.exe staging
+        run: cp -r HelloFx/target/gluonfx/x86_64-windows/HelloFx.* staging
+       
 
       # Upload the staging directory as a build artifact. You will be able to download this after the build finishes.
       - name: Upload
